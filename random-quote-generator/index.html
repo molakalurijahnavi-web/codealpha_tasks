@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Daily Quote Generator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header>
+            <h1>✨ Daily Quote</h1>
+            <p class="subtitle">A little inspiration, one quote at a time.</p>
+
+            <button id="theme-toggle" onclick="toggleTheme()">
+                🌙 Dark Mode
+            </button>
+        </header>
+
+        <main>
+
+            <div class="controls">
+
+                <label for="category-select">
+                    Choose a category
+                </label>
+
+                <select id="category-select" onchange="filterQuotes()">
+                    <option value="All">All Quotes</option>
+                    <option value="Motivation">Motivation</option>
+                    <option value="Life">Life</option>
+                    <option value="Success">Success</option>
+                    <option value="Study">Study</option>
+                    <option value="Growth">Growth</option>
+                    <option value="Learning">Learning</option>
+                </select>
+
+            </div>
+
+            <section class="quote-card">
+
+                <div class="quote-mark">“</div>
+
+                <p id="quote">
+                    Loading quote...
+                </p>
+
+                <p id="author"></p>
+
+                <span id="category">
+                    Motivation
+                </span>
+
+                <p id="quote-counter">
+                    Quote 1 of 4
+                </p>
+
+            </section>
+
+            <div class="buttons">
+
+                <button onclick="nextQuote()" class="primary-btn">
+                    🔄 New Quote
+                </button>
+
+                <button onclick="toggleFavorite()" id="favorite-btn">
+                    ❤️ Favorite
+                </button>
+
+                <button onclick="copyQuote()">
+                    📋 Copy
+                </button>
+
+            </div>
+
+            <p id="copy-message"></p>
+
+            <button
+                id="view-favorites"
+                onclick="toggleFavorites()"
+                style="display: none;">
+                ❤️ Favorites
+            </button>
+
+            <section
+                class="favorites-section"
+                style="display: none;">
+
+                <h2>❤️ My Favorite Quotes</h2>
+
+                <div id="favorites-list"></div>
+
+            </section>
+
+        </main>
+
+        <footer>
+            <p>Quote Generator • CodeAlpha Task 2</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

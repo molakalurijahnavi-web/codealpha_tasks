@@ -1,0 +1,349 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #f8f0ff,
+        #eaf7ff
+    );
+
+    color: #222;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.app {
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+    padding: 35px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 38px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+button,
+select {
+    font-family: inherit;
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 11px 17px;
+    cursor: pointer;
+
+    background: white;
+    color: #333;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+#theme-toggle {
+    background: #222;
+    color: white;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.controls label {
+    font-weight: bold;
+}
+
+select {
+    padding: 10px 14px;
+    border-radius: 9px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+}
+
+.quote-card {
+    position: relative;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-radius: 20px;
+
+    padding: 45px 35px 30px;
+
+    text-align: center;
+
+    min-height: 280px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.1);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.quote-card:hover {
+    transform: translateY(-3px);
+}
+
+.quote-mark {
+    position: absolute;
+    top: 12px;
+    left: 25px;
+
+    font-size: 70px;
+    font-weight: bold;
+
+    opacity: 0.15;
+}
+
+#quote {
+    font-size: 25px;
+    line-height: 1.6;
+
+    max-width: 700px;
+
+    margin-bottom: 18px;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+#author {
+    font-size: 18px;
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+#category {
+    display: inline-block;
+
+    padding: 6px 14px;
+
+    border-radius: 20px;
+
+    background: #eee;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#quote-counter {
+    margin-top: 12px;
+
+    font-size: 12px;
+
+    color: #888;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 22px;
+}
+
+.primary-btn {
+    background: #6c5ce7;
+    color: white;
+}
+
+#favorite-btn {
+    background: #ffe4ec;
+}
+
+#view-favorites {
+    display: block;
+    margin: 20px auto;
+}
+
+#copy-message {
+    text-align: center;
+    height: 20px;
+
+    margin-top: 10px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.favorites-section {
+    margin-top: 30px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.favorites-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.favorite-item {
+    position: relative;
+
+    padding: 18px;
+
+    margin-bottom: 12px;
+
+    background: #f7f7f7;
+
+    border-radius: 12px;
+}
+
+.favorite-item p {
+    margin-bottom: 8px;
+
+    line-height: 1.5;
+}
+
+.favorite-item span {
+    font-size: 13px;
+    font-weight: bold;
+    color: #666;
+}
+
+.remove-btn {
+    position: absolute;
+
+    right: 12px;
+    top: 12px;
+
+    padding: 5px 9px;
+
+    background: #ffdddd;
+
+    color: #b00000;
+}
+
+footer {
+    text-align: center;
+
+    margin-top: 35px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+/* DARK MODE */
+
+body.dark-mode {
+    background: linear-gradient(
+        135deg,
+        #17152a,
+        #10202c
+    );
+
+    color: #f5f5f5;
+}
+
+body.dark-mode .subtitle,
+body.dark-mode footer {
+    color: #bbb;
+}
+
+body.dark-mode .quote-card,
+body.dark-mode .favorites-section {
+    background: #242438;
+}
+
+body.dark-mode select,
+body.dark-mode button {
+    background: #303047;
+    color: white;
+}
+
+body.dark-mode #category {
+    background: #3b3b55;
+}
+
+body.dark-mode #quote-counter {
+    color: #aaa;
+}
+
+body.dark-mode .favorite-item {
+    background: #303047;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .app {
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    #quote {
+        font-size: 20px;
+    }
+
+    .quote-card {
+        padding: 40px 20px 25px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons button {
+        width: 100%;
+    }
+}
